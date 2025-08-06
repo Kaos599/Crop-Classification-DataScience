@@ -2,7 +2,7 @@
 
 **Academic Assignment Submission**  
 **Course:** Foundations of Data Science Core (CS3005)  
-**Student:** Harsh Dayal 22BCE10564  
+**Student:** Harsh Dayal ///////
 **Instructor:** Dr. Prerna Jha 
 
 ## Project Overview
