@@ -1,0 +1,57 @@
+# Crop vs. Non-Crop Land Segmentation Configuration
+# CS30305 - Foundations of Data Science Core
+# Student: Her Saleh 22 BCE 10564
+
+# Data Configuration
+data:
+  raw_data_path: "Dataset/"
+  processed_data_path: "data/processed/"
+  satellite_images: 10
+  image_format: "RapidEye"
+  ground_truth: "USDA_Cropland_Data_Layer"
+  
+# Preprocessing Parameters
+preprocessing:
+  image_size: [256, 256]
+  normalization: "min_max"
+  augmentation: true
+  temporal_alignment: true
+  spectral_bands: ["red", "green", "blue", "nir", "red_edge"]
+
+# NDVI Configuration
+ndvi:
+  threshold: 0.3
+  seasonal_adjustment: true
+  cloud_mask: true
+  
+# Model Configuration
+models:
+  classical_ml:
+    - "RandomForest"
+    - "SVM" 
+    - "GradientBoosting"
+  deep_learning:
+    architecture: "UNet"
+    backbone: "ResNet50"
+    input_channels: 5
+    num_classes: 2
+    
+# Training Parameters
+training:
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.001
+  validation_split: 0.2
+  early_stopping: true
+  
+# Evaluation Metrics
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1_score", "iou"]
+  cross_validation: 5
+  
+# Output Configuration
+output:
+  model_save_path: "results/models/"
+  figures_path: "results/figures/"
+  metrics_path: "results/metrics/"
+  log_level: "INFO"
